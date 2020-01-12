@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Анализ log-файлов</title>
+    <!--<link rel="stylesheet" type="text/css" href="settings.css">-->
+    <!--link rel="import" href="./css/style_krm.css"-->
+    <!--<link rel ="stylesheet" type="text/css" href="settings.css" />-->
+    <!--<link rel='stylesheet' href='settings.css' type='text/css'>-->
+
+    <!--<script src="{{ url_for('static', filename='/js/script.js') }}"></script>-->
+    <script
+         src="/static/js/script.js">
+    </script>
+
+
+</head>
+<body>
+<form action="/site" method='post'>
+    <p><b>Какой вопрос Вас интересует?</b></p>
+    <div id='questions' class='slowlable' style="display: block">
+        <p><input name="quest" type="radio" id="q1" value="q1" onclick='questions()'> Посетители из какой страны совершают больше всего действий на сайте?</p>
+        <p><input name="quest" type="radio" id="q2" value="q2" onclick='questions()'> Посетители из какой страны чаще всего интересуются товарами из определенных категорий?</p>
+        <p><input name="quest" type="radio" id="q3" value="q3" onclick='questions()'> Сколько брошенных (не оплаченных) корзин имеется за определенный период?</p>
+     </div>
+
+    <div id='date' name='dat' class='slowlable' style="display: none">
+        <p><b>Выберите период: </b></p>
+        <p>Введите даты из диапазона 2018-08-01 - 2018-08-14</p>
+        <p>(введенное значение должно соответствовать формату: ГГГГ-ММ-ДД)</p>
+        <p>Введите дату начала:<br><input  value='' id='date1' name='date1' pattern=[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])></p>
+        <p>Введите дату конца:<br><input value='' id='date2' name='date2' pattern=[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])></p>
+    </div>
+
+    <select id='categories'  class='slowlable' name='cat' size='1' style="display: none">
+        <p><b>Выберите категорию товаров:</b></p>
+        <option name='Консервированные продукты' value="canned_food,консервированные продукты">Консервированные продукты</option>
+        <option name='Икра' value="caviar,икра">Икра</option>
+        <option name='Свежая рыба' value="fresh_fish,свежая рыба">Свежая рыба</option>
+        <option name='Мороженая рыба' value="frozen_fish,мороженая рыба">Мороженая рыба</option>
+        <option name='Полуфабрикаты' value="semi_manufactures,полуфабрикаты">Полуфабрикаты</option>
+        <option selected="selected" value="">-</option>
+    </select><br>
+
+    <input class='sbutton' type="submit" value="Получить ответ"></input>
+</form>
+</body>
