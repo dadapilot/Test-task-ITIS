@@ -21,7 +21,6 @@ def get_param():
         items = params(request.form['quest'],
                        request.form['cat'].split(','),
                        [request.form['date1'], request.form['date2']])
-        #items.cat = items.cat.split(',')
 
         a = GetAnswers()
 
