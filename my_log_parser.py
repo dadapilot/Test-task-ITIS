@@ -165,7 +165,3 @@ class Log_Parser:
                 self.create_Category(act, cort.IP)
 
         self.create_Actions((action, cort.IP, cort.datetime, cat))
-
-lp=Log_Parser()
-
-lp.parse()
